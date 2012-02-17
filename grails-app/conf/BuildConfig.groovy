@@ -37,6 +37,9 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
+        // http://springsource.github.com/grails-data-mapping/mongo/manual/guide/index.html
+        compile ':mongodb:1.0.0.RC4'
+
         runtime ":hibernate:$grailsVersion"
         runtime ":jquery:1.7.1"
         runtime ":resources:1.1.6"
