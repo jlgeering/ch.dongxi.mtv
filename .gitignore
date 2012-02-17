@@ -4,6 +4,7 @@
 .settings
 stacktrace.log
 /*.zip
+/*.tmproj
 /plugin.xml
 /*.log
 /*DB.*
