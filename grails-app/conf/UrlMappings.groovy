@@ -25,7 +25,7 @@ class UrlMappings {
 		"/$controller/$action?/$id?"{
 			constraints {
 				controller(matches:/^((?!(api|mobile|web)).*)$/)
-		  	}
+			}
 		}
 		
 		/* 
