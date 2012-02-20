@@ -1,0 +1,110 @@
+@import compass
+@import compass/reset
+//@import compass/layout
+
+// This import applies a global reset to any page that imports this stylesheet.
+//@import "blueprint/reset"
+
+// To configure blueprint, edit the partials/base.sass file.
+//@import "partials/base"
+
+
+// Import all the default blueprint modules so that we can access their mixins.
+//@import "blueprint"
+@import "blueprint/typography"
+
+// Combine the partials into a single screen stylesheet.
+//@import "partials/page"
+//@import "partials/form"
+//@import "partials/one_col"
+//@import "partials/two_col"
+
++establish-baseline
+
+$banner-wide-width: 758px
+
+html
+	overflow-y: scroll
+
+body
+	background: none repeat scroll 0 0 #F5F5F5
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif
+
+#container
+	background: #fff
+	border: 1px solid #E5E5E5
+	margin: 10px auto
+	width: 1200px
+
+#top-menu
+	background: none repeat scroll 0 0 #EFEFEF
+	border-bottom: 1px solid #DDDDDD
+	padding: 0 1em
+	//height: 1.8em
+	font-size: 0.65em
+
+	#account
+		float: right
+
+	ul
+		margin: 0
+		padding: 0
+		+horizontal-list(1em)
+
+	a, #loggedas
+		color: #555
+
+	a
+		font-weight: bold
+
+#content
+	+blueprint-typography(true)
+
+	h1
+		color: #B09
+		margin: 0.4em 20px
+
+	.nav
+		+horizontal-list
+		background-color: #555
+		margin: 0
+		padding: 0.4em 20px
+		
+		a
+			color: white
+			font-weight: bold
+			text-decoration: none
+			
+		a:hover
+			text-decoration: underline
+
+a, a:link, a:visited
+	color: #B09
+	text-decoration: none
+a:hover
+	text-decoration: underline
+
+footer
+	border-top: 1px solid #E5E5E5
+	clear: both
+	color: #AAA
+	font-size: 0.7em
+	//padding: 5px
+	text-align: center
+
+
+.box
+	margin: 10px 0
+	padding: 10px 20px
+	//border: 2px solid red
+	//+border-radius(15px)
+	//background-color: #E8E8E8 !important
+
+#nav
+	font-size: 1em
+	
+.series-banner-wide
+	display: block
+	width: $banner-wide-width
+	margin: 1.5em auto
+	//+clearfix

@@ -1,52 +1,40 @@
-dataSource {
-	pooled = true
-	driverClassName = "org.h2.Driver"
-	username = "sa"
-	password = ""
-}
-hibernate {
-	cache.use_second_level_cache = true
-	cache.use_query_cache = true
-	cache.region.factory_class = 'net.sf.ehcache.hibernate.EhCacheRegionFactory'
-}
 grails {
 	mongo {
-		host = "localhost"
-		port = 27017
-//		username = "blah"
-//		password = "blah"
-		databaseName = "ch.dongxi.mtv"
+		// default
+//		host = 'localhost'
+//		port = 27017
+		databaseName = "ch_dongxi_fourier"
 	}
+}
+dataSource {
+    pooled = true
+    driverClassName = "org.hsqldb.jdbcDriver"
+    username = "sa"
+    password = ""
+}
+hibernate {
+    cache.use_second_level_cache = true
+    cache.use_query_cache = true
+    cache.provider_class = 'net.sf.ehcache.hibernate.EhCacheProvider'
 }
 // environment specific settings
 environments {
-	development {
-		dataSource {
-			dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-			url = "jdbc:h2:mem:devDb;MVCC=TRUE"
-		}
-	}
-	test {
-		dataSource {
-			dbCreate = "update"
-			url = "jdbc:h2:mem:testDb;MVCC=TRUE"
-		}
-	}
-	production {
-		dataSource {
-			dbCreate = "update"
-			url = "jdbc:h2:prodDb;MVCC=TRUE"
-			pooled = true
-			properties {
-				maxActive = -1
-				minEvictableIdleTimeMillis=1800000
-				timeBetweenEvictionRunsMillis=1800000
-				numTestsPerEvictionRun=3
-				testOnBorrow=true
-				testWhileIdle=true
-				testOnReturn=true
-				validationQuery="SELECT 1"
-			}
-		}
-	}
+    development {
+        dataSource {
+            dbCreate = "create-drop" // one of 'create', 'create-drop','update'
+            url = "jdbc:hsqldb:mem:devDB"
+        }
+    }
+    test {
+        dataSource {
+            dbCreate = "update"
+            url = "jdbc:hsqldb:mem:testDb"
+        }
+    }
+    production {
+        dataSource {
+            dbCreate = "update"
+            url = "jdbc:hsqldb:file:prodDb;shutdown=true"
+        }
+    }
 }
