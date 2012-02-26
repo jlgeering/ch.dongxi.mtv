@@ -22,9 +22,10 @@
 					<img alt="${series.series_name}" src="${createLink(controller:'assets', action:'serve', id: series.banner_file_id)}">
 				</g:if>
 				<g:else>
-					<div class="placeholder">
+					<img alt="${series.series_name}" src="http://placehold.it/758x140&text=${series.series_name}">
+					<%--<div class="placeholder">
 						<span>${series.series_name}</span>
-					</div>
+					</div>--%>
 				</g:else>
 			</g:link>
 		</div>
